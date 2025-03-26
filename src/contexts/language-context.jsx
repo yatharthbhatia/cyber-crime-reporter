@@ -31,13 +31,50 @@ const translations = {
     validationErrors: {
       description: "Please provide a detailed description (at least 50 characters)",
       contact: "Please enter a valid 10-digit contact number",
-      terms: "Please accept the terms"
+      terms: "Please accept the terms",
+      emergencyName: "Please enter a valid name",
+      emergencyContact: "Please enter a valid contact number",
+      emergencyRelation: "Please specify the relationship"
     },
     statuses: {
       pending: "Pending",
       investigating: "Under Investigation",
       resolved: "Resolved",
       closed: "Closed"
+    },
+    emergencyContact: {
+      title: "Emergency Contact Information",
+      name: "Full Name",
+      contact: "Contact Number",
+      email: "Email Address",
+      relation: "Relationship",
+      add: "Add Emergency Contact",
+      update: "Update Contact",
+      remove: "Remove",
+      noContacts: "No emergency contacts added"
+    },
+    escalation: {
+      title: "Case Escalation",
+      escalate: "Escalate to Authorities",
+      authority: "Select Authority",
+      police: "Cyber Crime Police",
+      cert: "CERT-In",
+      other: "Other Authority",
+      details: "Additional Details",
+      confirm: "Confirm Escalation",
+      escalated: "Case Escalated",
+      tracking: "Tracking Information",
+      reference: "Reference Number"
+    },
+    resources: {
+      title: "Education & Resources",
+      prevention: "Prevention Tips",
+      awareness: "Awareness",
+      reporting: "Reporting Guidelines",
+      support: "Support Services",
+      faq: "Frequently Asked Questions",
+      helplines: "Helplines",
+      learnMore: "Learn More"
     }
   },
   hi: {
@@ -67,13 +104,50 @@ const translations = {
     validationErrors: {
       description: "कृपया विस्तृत विवरण प्रदान करें (कम से कम 50 अक्षर)",
       contact: "कृपया एक वैध 10-अंकों का संपर्क नंबर दर्ज करें",
-      terms: "कृपया नियमों को स्वीकार करें"
+      terms: "कृपया नियमों को स्वीकार करें",
+      emergencyName: "कृपया एक वैध नाम दर्ज करें",
+      emergencyContact: "कृपया एक वैध संपर्क नंबर दर्ज करें",
+      emergencyRelation: "कृपया रिश्ता निर्दिष्ट करें"
     },
     statuses: {
       pending: "लंबित",
       investigating: "जांच के अधीन",
       resolved: "समाधान हो गया",
       closed: "बंद"
+    },
+    emergencyContact: {
+      title: "आपातकालीन संपर्क जानकारी",
+      name: "पूरा नाम",
+      contact: "संपर्क नंबर",
+      email: "ईमेल पता",
+      relation: "रिश्ता",
+      add: "आपातकालीन संपर्क जोड़ें",
+      update: "संपर्क अपडेट करें",
+      remove: "हटाएं",
+      noContacts: "कोई आपातकालीन संपर्क नहीं जोड़ा गया"
+    },
+    escalation: {
+      title: "केस एस्केलेशन",
+      escalate: "अधिकारियों को भेजें",
+      authority: "अधिकारी चुनें",
+      police: "साइबर क्राइम पुलिस",
+      cert: "CERT-In",
+      other: "अन्य अधिकारी",
+      details: "अतिरिक्त विवरण",
+      confirm: "एस्केलेशन की पुष्टि करें",
+      escalated: "केस एस्केलेट किया गया",
+      tracking: "ट्रैकिंग जानकारी",
+      reference: "संदर्भ संख्या"
+    },
+    resources: {
+      title: "शिक्षा और संसाधन",
+      prevention: "रोकथाम के टिप्स",
+      awareness: "जागरूकता",
+      reporting: "रिपोर्टिंग दिशानिर्देश",
+      support: "सहायता सेवाएं",
+      faq: "अक्सर पूछे जाने वाले प्रश्न",
+      helplines: "हेल्पलाइन",
+      learnMore: "अधिक जानें"
     }
   }
 };
