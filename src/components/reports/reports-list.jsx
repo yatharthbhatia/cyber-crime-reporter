@@ -4,6 +4,7 @@ import * as React from "react";
 import { useReports } from "../../contexts/reports-context";
 import { useLanguage } from "../../contexts/language-context";
 import { cn } from "../../lib/utils";
+import { ReportForm } from "./report-form";
 
 const statusColors = {
   pending: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
@@ -22,8 +23,11 @@ export function ReportsList() {
   };
 
   return (
-    <div className="space-y-6">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{t("myReports")}</h2>
+    <div className="space-y-8">
+      <div>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t("myReports")}</h2>
+        <ReportForm />
+      </div>
       
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-4">

@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-
-import { cn } from "../../../lib/utils";
+import { cn } from "@/lib/utils.ts"; // Ensure this path is correct
 
 const Label = React.forwardRef<HTMLLabelElement, React.LabelHTMLAttributes<HTMLLabelElement>>(
   ({ className, ...props }, ref) => (
