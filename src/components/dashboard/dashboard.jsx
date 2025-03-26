@@ -49,16 +49,16 @@ export function Dashboard() {
           return (
             <div
               key={stat.id}
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm"
+              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700"
             >
               <div className="flex items-center justify-between mb-4">
-                <div className="text-sm font-medium text-gray-500 dark:text-gray-400">
+                <div className="text-sm font-medium text-gray-600 dark:text-gray-300">
                   {stat.label}
                 </div>
-                <Icon className="h-5 w-5 text-gray-400 dark:text-gray-500" />
+                <Icon className="h-5 w-5 text-gray-500 dark:text-gray-400" />
               </div>
               <div className="flex items-baseline justify-between">
-                <div className="text-2xl font-semibold text-gray-900 dark:text-white">
+                <div className="text-2xl font-semibold text-gray-900 dark:text-gray-50">
                   {stat.value}
                 </div>
                 <div
@@ -79,8 +79,8 @@ export function Dashboard() {
 
       <div className="grid gap-6 md:grid-cols-2">
         {/* Crime Type Distribution */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">
             Crime Type Distribution
           </h3>
           <div className="h-[300px]">
@@ -89,8 +89,8 @@ export function Dashboard() {
         </div>
 
         {/* Report Status Trends */}
-        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm">
-          <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+        <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
+          <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-4">
             Report Status Trends
           </h3>
           <div className="h-[300px]">

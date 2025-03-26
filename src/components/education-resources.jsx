@@ -96,12 +96,12 @@ export function EducationResources() {
   ];
 
   return (
-    <div className="space-y-8 bg-white dark:bg-gray-800 shadow-xl rounded-lg p-6">
+    <div className="space-y-8 bg-white dark:bg-gray-900 shadow-xl rounded-lg p-6">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-50">
           {t("resources.title")}
         </h2>
-        <p className="mt-2 text-gray-600 dark:text-gray-400">
+        <p className="mt-2 text-gray-600 dark:text-gray-300">
           Learn how to protect yourself online and what to do if you become a victim
         </p>
       </div>
@@ -109,17 +109,17 @@ export function EducationResources() {
       {/* Prevention and Awareness Resources */}
       <div className="grid gap-6 md:grid-cols-2">
         {resources.map((resource) => (
-          <div key={resource.id} className="p-5 border border-gray-200 dark:border-gray-700 rounded-lg">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div key={resource.id} className="rounded-2xl p-10 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">
               {resource.title}
             </h3>
             <ul className="space-y-2">
               {resource.content.map((item, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 mr-2 mt-0.5">
+                  <span className="inline-flex items-center justify-center h-5 w-5 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100 mr-2 mt-0.5">
                     {index + 1}
                   </span>
-                  <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                  <span className="text-gray-700 dark:text-gray-200">{item}</span>
                 </li>
               ))}
             </ul>
@@ -129,12 +129,12 @@ export function EducationResources() {
 
       {/* Helplines Section */}
       <div className="mt-10">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">
           {t("resources.helplines")}
         </h3>
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-            <thead className="bg-gray-50 dark:bg-gray-700">
+          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-600 rounded-2xl overflow-hidden">
+            <thead className="bg-gray-50 dark:bg-gray-800 rounded-t-2xl">
               <tr>
                 <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
                   Name
@@ -147,10 +147,10 @@ export function EducationResources() {
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+            <tbody className="bg-white dark:bg-gray-900 divide-y divide-gray-200 dark:divide-gray-600 rounded-b-2xl">
               {helplines.map((helpline, index) => (
                 <tr key={index}>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-gray-50">
                     {helpline.name}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
@@ -168,16 +168,16 @@ export function EducationResources() {
 
       {/* FAQs Section */}
       <div className="mt-10">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4">
           {t("resources.faq")}
         </h3>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-              <h4 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+            <div key={index} className="p-5 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-2xl hover:shadow-md transition-all">
+              <h4 className="text-lg font-medium text-gray-900 dark:text-gray-50 mb-2">
                 {faq.question}
               </h4>
-              <p className="text-gray-700 dark:text-gray-300">
+              <p className="text-gray-700 dark:text-gray-200">
                 {faq.answer}
               </p>
             </div>
@@ -186,8 +186,8 @@ export function EducationResources() {
       </div>
 
       {/* External Resources */}
-      <div className="mt-10 p-5 bg-blue-50 dark:bg-blue-900 rounded-lg">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+      <div className="mt-10 p-5 bg-blue-50 dark:bg-blue-900/20 rounded-xl">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">
           External Resources
         </h3>
         <div className="grid gap-4 md:grid-cols-2">
@@ -195,44 +195,44 @@ export function EducationResources() {
             href="https://www.cybercrime.gov.in" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center"
+            className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <div className="ml-3">
-              <h4 className="text-md font-medium text-gray-900 dark:text-white">National Cyber Crime Portal</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Official portal for reporting cyber crimes in India</p>
+              <h4 className="text-md font-medium text-gray-900 dark:text-gray-50">National Cyber Crime Portal</h4>
+              <p className="text-sm text-gray-500 dark:text-gray-300">Official portal for reporting cyber crimes in India</p>
             </div>
           </a>
           <a 
             href="https://www.cert-in.org.in" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center"
+            className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <div className="ml-3">
-              <h4 className="text-md font-medium text-gray-900 dark:text-white">CERT-In</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Indian Computer Emergency Response Team</p>
+              <h4 className="text-md font-medium text-gray-900 dark:text-gray-50">CERT-In</h4>
+              <p className="text-sm text-gray-500 dark:text-gray-300">Indian Computer Emergency Response Team</p>
             </div>
           </a>
           <a 
             href="https://www.mha.gov.in" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center"
+            className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <div className="ml-3">
-              <h4 className="text-md font-medium text-gray-900 dark:text-white">Ministry of Home Affairs</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">Government resources on cyber security</p>
+              <h4 className="text-md font-medium text-gray-900 dark:text-gray-50">Ministry of Home Affairs</h4>
+              <p className="text-sm text-gray-500 dark:text-gray-300">Government resources on cyber security</p>
             </div>
           </a>
           <a 
             href="https://www.nciipc.gov.in" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="p-3 bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center"
+            className="p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all flex items-center hover:bg-gray-50 dark:hover:bg-gray-700"
           >
             <div className="ml-3">
-              <h4 className="text-md font-medium text-gray-900 dark:text-white">NCIIPC</h4>
-              <p className="text-sm text-gray-500 dark:text-gray-400">National Critical Information Infrastructure Protection Centre</p>
+              <h4 className="text-md font-medium text-gray-900 dark:text-gray-50">NCIIPC</h4>
+              <p className="text-sm text-gray-500 dark:text-gray-300">National Critical Information Infrastructure Protection Centre</p>
             </div>
           </a>
         </div>

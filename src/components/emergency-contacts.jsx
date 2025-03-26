@@ -64,14 +64,14 @@ export function EmergencyContacts() {
 
   return (
     <div className="space-y-6 bg-white dark:bg-gray-800 shadow-xl rounded-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">
         {t("emergencyContact.title")}
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-4">
           <div className="space-y-2">
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="name" className="px-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
               {t("emergencyContact.name")}
             </label>
             <input
@@ -81,7 +81,7 @@ export function EmergencyContacts() {
               required
               defaultValue={editingContact?.name || ""}
               className={cn(
-                "w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
+                "w-full px-3 py-2 border rounded-2xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
                 formErrors.name ? "border-red-500" : "border-gray-300 dark:border-gray-600"
               )}
             />
@@ -91,7 +91,7 @@ export function EmergencyContacts() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="contact" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="contact" className="px-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
               {t("emergencyContact.contact")}
             </label>
             <input
@@ -102,7 +102,7 @@ export function EmergencyContacts() {
               defaultValue={editingContact?.contact || ""}
               placeholder="10-digit mobile number"
               className={cn(
-                "w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
+                "w-full px-3 py-2 border rounded-2xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
                 formErrors.contact ? "border-red-500" : "border-gray-300 dark:border-gray-600"
               )}
             />
@@ -112,7 +112,7 @@ export function EmergencyContacts() {
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="email" className="px-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
               {t("emergencyContact.email")}
             </label>
             <input
@@ -120,12 +120,12 @@ export function EmergencyContacts() {
               id="email"
               name="email"
               defaultValue={editingContact?.email || ""}
-              className="w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors border-gray-300 dark:border-gray-600"
+              className="w-full px-3 py-2 border rounded-2xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors border-gray-300 dark:border-gray-600"
             />
           </div>
 
           <div className="space-y-2">
-            <label htmlFor="relation" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="relation" className="px-2 block text-sm font-medium text-gray-700 dark:text-gray-300">
               {t("emergencyContact.relation")}
             </label>
             <input
@@ -135,7 +135,7 @@ export function EmergencyContacts() {
               required
               defaultValue={editingContact?.relation || ""}
               className={cn(
-                "w-full px-3 py-2 border rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
+                "w-full px-3 py-2 border rounded-2xl bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors",
                 formErrors.relation ? "border-red-500" : "border-gray-300 dark:border-gray-600"
               )}
             />
@@ -147,7 +147,7 @@ export function EmergencyContacts() {
           <div className="flex gap-4">
             <button
               type="submit"
-              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-offset-gray-800"
             >
               {editingContact ? t("emergencyContact.update") : t("emergencyContact.add")}
             </button>
@@ -155,7 +155,7 @@ export function EmergencyContacts() {
               <button
                 type="button"
                 onClick={handleCancel}
-                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
               >
                 Cancel
               </button>
@@ -165,7 +165,7 @@ export function EmergencyContacts() {
       </form>
 
       <div className="mt-8">
-        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-50 mb-4">
           {t("emergencyContact.title")}
         </h3>
         {emergencyContacts.length > 0 ? (
@@ -173,11 +173,11 @@ export function EmergencyContacts() {
             {emergencyContacts.map((contact) => (
               <div
                 key={contact.id}
-                className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+                className="p-4 border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg"
               >
                 <div className="flex justify-between items-start">
                   <div>
-                    <h4 className="font-medium text-gray-900 dark:text-white">{contact.name}</h4>
+                    <h4 className="font-medium text-gray-900 dark:text-gray-50">{contact.name}</h4>
                     <p className="text-sm text-gray-600 dark:text-gray-300">{contact.relation}</p>
                     <p className="text-sm text-gray-600 dark:text-gray-300">{contact.contact}</p>
                     {contact.email && (
@@ -187,13 +187,13 @@ export function EmergencyContacts() {
                   <div className="flex space-x-2">
                     <button
                       onClick={() => handleEdit(contact)}
-                      className="px-3 py-1 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-md hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                      className="px-3 py-1.5 text-xs bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
                     >
                       {t("emergencyContact.update")}
                     </button>
                     <button
                       onClick={() => removeEmergencyContact(contact.id)}
-                      className="px-3 py-1 text-xs bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-md hover:bg-red-200 dark:hover:bg-red-800 transition-colors"
+                      className="px-3 py-1.5 text-xs bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200 rounded-full hover:bg-red-200 dark:hover:bg-red-800 transition-colors"
                     >
                       {t("emergencyContact.remove")}
                     </button>
@@ -203,7 +203,7 @@ export function EmergencyContacts() {
             ))}
           </div>
         ) : (
-          <p className="text-gray-500 dark:text-gray-400 text-center py-8">
+          <p className="text-gray-500 dark:text-gray-400 text-center py-4">
             {t("emergencyContact.noContacts")}
           </p>
         )}

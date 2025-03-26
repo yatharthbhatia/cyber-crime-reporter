@@ -53,20 +53,20 @@ export function CaseEscalation({ reportId }) {
     
     return (
       <div className="space-y-6 bg-white dark:bg-gray-800 shadow-xl rounded-lg p-6">
-        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">
           {t("escalation.escalated")}
         </h2>
         
-        <div className="space-y-4 p-4 bg-green-50 dark:bg-green-900 rounded-lg">
+        <div className="space-y-4 p-4 bg-green-50 dark:bg-green-900/30 rounded-lg">
           <div>
-            <h3 className="font-medium text-gray-900 dark:text-white">
+            <h3 className="font-medium text-gray-900 dark:text-gray-50">
               {t("escalation.tracking")}
             </h3>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
               {t("escalation.authority")}: {escalationDetails.name}
             </p>
             <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
-              {t("escalation.reference")}: <span className="font-mono font-bold">{escalationDetails.referenceNumber}</span>
+              {t("escalation.reference")}: <span className="font-mono font-bold text-gray-900 dark:text-gray-50">{escalationDetails.referenceNumber}</span>
             </p>
             {escalationDetails.details && (
               <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
@@ -84,7 +84,7 @@ export function CaseEscalation({ reportId }) {
   
   return (
     <div className="space-y-6 bg-white dark:bg-gray-800 shadow-xl rounded-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-50">
         {t("escalation.title")}
       </h2>
       
@@ -121,7 +121,7 @@ export function CaseEscalation({ reportId }) {
             />
           </div>
           
-          <div className="p-4 bg-yellow-50 dark:bg-yellow-900 rounded-lg">
+          <div className="p-4 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg">
             <p className="text-sm text-yellow-800 dark:text-yellow-200">
               {t("By escalating this case, the report will be forwarded to the selected authority for further investigation.")}
             </p>
@@ -129,7 +129,7 @@ export function CaseEscalation({ reportId }) {
           
           <button
             type="submit"
-            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
+            className="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-offset-gray-800"
           >
             {t("escalation.confirm")}
           </button>

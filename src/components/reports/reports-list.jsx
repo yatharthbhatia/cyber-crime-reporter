@@ -32,10 +32,10 @@ export function ReportsList() {
               key={report.id}
               onClick={() => setSelectedReport(report)}
               className={cn(
-                "p-4 rounded-lg border cursor-pointer transition-colors",
-                "hover:border-blue-500 dark:hover:border-blue-400",
+                "p-4 rounded-xl border cursor-pointer transition-colors",
+                "hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg",
                 selectedReport?.id === report.id
-                  ? "border-blue-500 dark:border-blue-400"
+                  ? "border-blue-500 dark:border-blue-400 shadow-md"
                   : "border-gray-200 dark:border-gray-700"
               )}
             >
@@ -45,7 +45,7 @@ export function ReportsList() {
                 </h3>
                 <span
                   className={cn(
-                    "px-2 py-1 text-xs font-medium rounded",
+                    "px-3 py-1.5 text-xs font-medium rounded-full",
                     statusColors[report.status]
                   )}
                 >
@@ -124,7 +124,7 @@ export function ReportsList() {
                 <dd className="mt-1">
                   <span
                     className={cn(
-                      "px-2 py-1 text-xs font-medium rounded",
+                      "px-3 py-1.5 text-xs font-medium rounded-full",
                       statusColors[selectedReport.status]
                     )}
                   >

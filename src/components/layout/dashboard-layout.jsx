@@ -23,10 +23,10 @@ export function DashboardLayout({ children, onViewChange }) {
       {/* Sidebar */}
       <aside className="w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 flex flex-col">
         <div className="flex items-center gap-2 mb-8">
-          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold">CC</span>
+          <div className="w-10 h-10 bg-blue-500 flex items-center justify-center border rounded-xl">
+            <span className="text-white font-bold select-none cursor-help">CC</span>
           </div>
-          <h1 className="text-xl font-bold text-gray-900 dark:text-white">CyberCrime</h1>
+          <h1 className="text-xl font-bold text-gray-900 dark:text-white select-none cursor-help">CyberCrime</h1>
         </div>
 
         <nav className="flex-1 space-y-1">
@@ -40,9 +40,9 @@ export function DashboardLayout({ children, onViewChange }) {
                   onViewChange(item.id);
                 }}
                 className={cn(
-                  "w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                  "w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-full transition-all hover:shadow-md",
                   activeItem === item.id
-                    ? "bg-blue-50 text-blue-600 dark:bg-blue-900 dark:text-blue-200"
+                    ? "bg-blue-500 text-white dark:bg-blue-600"
                     : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                 )}
               >
@@ -65,7 +65,7 @@ export function DashboardLayout({ children, onViewChange }) {
             </select>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all hover:shadow-sm"
             >
               {theme === "dark" ? (
                 <Sun className="h-5 w-5 text-gray-600 dark:text-gray-400" />
@@ -74,7 +74,7 @@ export function DashboardLayout({ children, onViewChange }) {
               )}
             </button>
           </div>
-          <button className="w-full flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-lg text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition-colors">
+          <button className="w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-full text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition-all hover:shadow-md">
             <LogOut className="h-5 w-5" />
             Sign Out
           </button>
