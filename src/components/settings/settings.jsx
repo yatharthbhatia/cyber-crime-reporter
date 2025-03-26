@@ -11,17 +11,17 @@ export function Settings() {
   return (
     <div className="space-y-8">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-        {t("settings")}
+        {t("Settings")}
       </h2>
 
       <div className="space-y-6">
         <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
           <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            {t("appearance")}
+            {t("Appearance")}
           </h3>
           <div className="space-y-4">
             <div>
-              <Label>{t("theme")}</Label>
+              <Label>{t("Theme")}</Label>
               <div className="mt-2 flex gap-4">
                 <Button
                   onClick={() => setTheme("light")}
@@ -42,11 +42,11 @@ export function Settings() {
 
         <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
           <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
-            {t("language")}
+            {t("Language")}
           </h3>
           <div className="space-y-4">
             <div>
-              <Label>{t("selectLanguage")}</Label>
+              <Label>{t("Select Language")}</Label>
               <div className="mt-2 flex gap-4">
                 <Button
                   onClick={() => setLanguage("en")}
