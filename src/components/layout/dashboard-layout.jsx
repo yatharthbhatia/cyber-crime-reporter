@@ -15,7 +15,7 @@ export function DashboardLayout({ children, onViewChange }) {
     { id: "report", label: "Report Crime", icon: FileText },
     { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
     { id: "reports", label: "Reports", icon: FileText },
-    { id: "contacts", label: "Emergency Contacts", icon: Users },
+    { id: "contacts", label: "Emergency Contacts",icon: Users },
     { id: "resources", label: "Resources", icon: BookOpen },
     { id: "settings", label: "Settings", icon: Settings },
   ];
@@ -38,7 +38,12 @@ export function DashboardLayout({ children, onViewChange }) {
 
       {/* Sidebar */}
       <aside
-        className={`${isSidebarOpen ? 'w-64' : 'w-20'} ${isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 fixed lg:relative z-40 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 flex flex-col transition-all duration-300 ease-in-out h-screen`}
+        style={{ transitionProperty: 'width, transform' }}
+        className={cn(
+          "fixed lg:relative z-40 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 p-4 flex flex-col h-screen transition-all duration-300 ease-in-out",
+          isSidebarOpen ? "w-64" : "w-20",
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        )}
       >
         {/* Toggle button */}
         <button
@@ -46,7 +51,7 @@ export function DashboardLayout({ children, onViewChange }) {
           className="hidden lg:block absolute -right-3 top-10 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full p-1 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
         >
           <svg
-            className={`h-4 w-4 text-gray-600 dark:text-gray-300 transform transition-transform ${isSidebarOpen ? 'rotate-0' : 'rotate-180'}`}
+            className={`h-4 w-4 text-gray-600 dark:text-gray-300 transform transition-transform duration-300 ${isSidebarOpen ? 'rotate-0' : 'rotate-180'}`}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -58,9 +63,9 @@ export function DashboardLayout({ children, onViewChange }) {
           <div className="w-10 h-10 bg-blue-500 flex items-center justify-center border rounded-xl">
             <span className="text-white font-bold select-none cursor-help">CC</span>
           </div>
-          {isSidebarOpen && (
-            <h1 className="text-xl font-bold text-gray-900 dark:text-white select-none cursor-help">CyberCrime</h1>
-          )}
+          <div className={`transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 w-0'}`}>
+            <h1 className="text-xl font-bold text-gray-900 dark:text-white select-none cursor-help whitespace-nowrap">CyberCrime</h1>
+          </div>
         </div>
 
         <nav className="flex-1 space-y-1.5">
@@ -75,52 +80,63 @@ export function DashboardLayout({ children, onViewChange }) {
                   if (isMobileMenuOpen) setIsMobileMenuOpen(false);
                 }}
                 className={cn(
-                  "w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-full transition-all hover:shadow-md",
+                  "w-full flex items-center px-4 py-2.5 text-sm font-medium rounded-full transition-all hover:shadow-md",
+                  !isSidebarOpen && "justify-center",
                   activeItem === item.id
                     ? "bg-blue-500 text-white dark:bg-blue-600"
                     : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                 )}
                 title={!isSidebarOpen ? item.label : undefined}
               >
-                <Icon className="h-5 w-5" />
-                {isSidebarOpen && item.label}
+                <Icon className={cn(
+                  "transition-transform duration-300",
+                  isSidebarOpen ? "w-5 h-5 mr-3" : "w-6 h-6 transform scale-110"
+                )} />
+                <span className={`transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 w-0'} whitespace-nowrap`}>
+                  {item.label}
+                </span>
               </button>
             );
           })}
         </nav>
 
         <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4 space-y-4">
-          {isSidebarOpen && (
+          <div className={`transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 h-0 overflow-hidden'}`}>
             <div className="flex items-center justify-between px-3">
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              className="text-sm bg-transparent border-none focus:ring-0 text-gray-700 dark:text-gray-300"
-            >
-              <option value="en">English</option>
-              <option value="hi">हिंदी</option>
-            </select>
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all hover:shadow-sm"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-              ) : (
-                <Moon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
-              )}
-            </button>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                className="text-sm bg-transparent border-none focus:ring-0 text-gray-700 dark:text-gray-300"
+              >
+                <option value="en">English</option>
+                <option value="hi">हिंदी</option>
+              </select>
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="p-2.5 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-all hover:shadow-sm"
+              >
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                ) : (
+                  <Moon className="h-5 w-5 text-gray-600 dark:text-gray-400" />
+                )}
+              </button>
+            </div>
           </div>
-          )}
           <button 
             className={cn(
-              "w-full flex items-center gap-3 px-4 py-2.5 text-sm font-medium rounded-full text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition-all hover:shadow-md",
+              "w-full flex items-center px-4 py-2.5 text-sm font-medium rounded-full text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/50 transition-all hover:shadow-md",
               !isSidebarOpen && "justify-center"
             )}
             title={!isSidebarOpen ? "Sign Out" : undefined}
           >
-            <LogOut className="h-5 w-5" />
-            {isSidebarOpen && "Sign Out"}
+            <LogOut className={cn(
+              "transition-transform duration-300",
+              isSidebarOpen ? "w-5 h-5 mr-3" : "w-6 h-6 transform scale-110"
+            )} />
+            <span className={`transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100' : 'opacity-0 w-0'} whitespace-nowrap`}>
+              Sign Out
+            </span>
           </button>
         </div>
       </aside>
