@@ -14,7 +14,8 @@ const statusColors = {
 };
 
 export function ReportsList() {
-  const { reports } = useReports();
+  const { getUserReports } = useReports();
+  const reports = getUserReports();
   const { t } = useLanguage();
   const [selectedReport, setSelectedReport] = React.useState(null);
 

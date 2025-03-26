@@ -14,6 +14,8 @@ const initialState = {
   updateEmergencyContact: () => null,
   removeEmergencyContact: () => null,
   escalateReport: () => null,
+  currentUserId: '1', // Simulated user ID for demo
+  getUserReports: () => [],
 };
 
 const ReportsContext = createContext(initialState);
@@ -30,6 +32,7 @@ function ReportsProvider({ children }) {
       status: 'pending',
       submittedAt: new Date().toISOString(),
       isAnonymous,
+      userId: initialState.currentUserId, // Associate report with current user
     };
     setReports((prev) => [newReport, ...prev]);
     return newReport.id;
@@ -79,6 +82,10 @@ function ReportsProvider({ children }) {
     );
   };
 
+  const getUserReports = () => {
+    return reports.filter(report => report.userId === initialState.currentUserId);
+  };
+
   const value = {
     reports,
     addReport,
@@ -90,6 +97,8 @@ function ReportsProvider({ children }) {
     updateEmergencyContact,
     removeEmergencyContact,
     escalateReport,
+    currentUserId: initialState.currentUserId,
+    getUserReports,
   };
 
   return (

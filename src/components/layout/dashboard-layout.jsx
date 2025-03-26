@@ -29,7 +29,7 @@ export function DashboardLayout({ children, onViewChange }) {
           <h1 className="text-xl font-bold text-gray-900 dark:text-white select-none cursor-help">CyberCrime</h1>
         </div>
 
-        <nav className="flex-1 space-y-1">
+        <nav className="flex-1 space-y-1.5">
           {menuItems.map((item) => {
             const Icon = item.icon;
             return (
