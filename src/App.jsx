@@ -5,8 +5,10 @@ import './App.css'
 import { DashboardLayout } from './components/layout/dashboard-layout'
 import { Dashboard } from './components/dashboard/dashboard'
 import { ReportsList } from './components/reports/reports-list'
+import { ReportForm } from './components/reports/report-form'
 import { EmergencyContacts } from './components/emergency-contacts'
 import { EducationResources } from './components/education-resources'
+import { Settings } from './components/settings/settings'
 import { cn } from './lib/utils'
 import { ThemeProvider } from './components/theme-provider'
 import { LanguageProvider } from './contexts/language-context'
@@ -19,12 +21,16 @@ function App() {
     switch (currentView) {
       case 'dashboard':
         return <Dashboard />
+      case 'report':
+        return <ReportForm />
       case 'reports':
         return <ReportsList />
       case 'contacts':
         return <EmergencyContacts />
       case 'resources':
         return <EducationResources />
+      case 'settings':
+        return <Settings />
       default:
         return <Dashboard />
     }
