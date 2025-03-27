@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+import { Toaster } from 'react-hot-toast'
 import './App.css'
 import { DashboardLayout } from './components/layout/dashboard-layout'
 import { Dashboard } from './components/dashboard/dashboard'
@@ -43,7 +42,33 @@ function App() {
           <DashboardLayout onViewChange={setCurrentView}>
             {renderView()}
           </DashboardLayout>
-          <ToastContainer position="top-right" />
+          <Toaster
+            position="top-right"
+            toastOptions={{
+              className: '',
+              style: {
+                background: 'var(--background)',
+                color: 'var(--foreground)',
+                border: '1px solid var(--border)',
+                padding: '16px',
+              },
+              success: {
+                style: {
+                  background: '#ECFDF5',
+                  color: '#065F46',
+                  border: '1px solid #065F46',
+                },
+              },
+              error: {
+                style: {
+                  background: '#FEE2E2',
+                  color: '#991B1B',
+                  border: '1px solid #991B1B',
+                },
+              },
+              duration: 4000,
+            }}
+          />
         </ReportsProvider>
       </LanguageProvider>
     </ThemeProvider>

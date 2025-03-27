@@ -5,6 +5,7 @@ import { useReports } from "../../contexts/reports-context";
 import { useLanguage } from "../../contexts/language-context";
 import { cn } from "../../lib/utils";
 import { ReportForm } from "./report-form";
+import { CaseEscalation } from "../case-escalation";
 
 const statusColors = {
   pending: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200",
@@ -139,6 +140,11 @@ export function ReportsList() {
                   </dd>
                 </div>
               </dl>
+              
+              {/* Add Case Escalation Component */}
+              <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-700">
+                <CaseEscalation reportId={selectedReport.id} />
+              </div>
             </div>
           )}
         </div>

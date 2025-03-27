@@ -33,6 +33,34 @@ export async function updateReportStatus(reportId, status) {
   return report;
 }
 
+export async function escalateReport(reportId, escalationData) {
+  const { authority, priority, details } = escalationData;
+  const report = await prisma.report.update({
+    where: { id: reportId },
+    data: {
+      status: 'ESCALATED',
+      escalatedTo: authority,
+      escalatedAt: new Date(),
+      escalationRef: `CR-${Date.now().toString().slice(-6)}-${Math.floor(Math.random() * 1000)}`,
+      priority,
+    },
+  });
+  return report;
+}
+
+export async function getEscalatedReports(filters = {}) {
+  const reports = await prisma.report.findMany({
+    where: {
+      status: 'ESCALATED',
+      ...filters,
+    },
+    orderBy: {
+      escalatedAt: 'desc',
+    },
+  });
+  return reports;
+}
+
 export async function getEmergencyContacts() {
   const contacts = await prisma.emergencyContact.findMany({
     orderBy: {
